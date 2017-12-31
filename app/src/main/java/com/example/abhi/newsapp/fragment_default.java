@@ -40,10 +40,30 @@ public class fragment_default extends Fragment {
         list.add(o3);
         obj1 o4=new obj1(R.mipmap.ic_mail,"Daily Mail");
         list.add(o4);
+        obj1 o5=new obj1(R.mipmap.ic_bloomberg,"Bloomberg");
+        list.add(o5);
+        obj1 o6=new obj1(R.mipmap.ic_nbc,"CNBC News");
+        list.add(o6);
+        obj1 o7=new obj1(R.mipmap.ic_ars_technica,"Ars Technica");
+        list.add(o7);
+        obj1 o8=new obj1(R.mipmap.ic_verge,"The Verge");
+        list.add(o8);
+        obj1 o9=new obj1(R.mipmap.ic_foxsports,"Fox Sports");
+        list.add(o9);
+        obj1 o10=new obj1(R.mipmap.ic_espn,"ESPN");
+        list.add(o10);
+        obj1 o11=new obj1(R.mipmap.ic_espncric,"ESPN Cric Info");
+        list.add(o11);
+        obj1 o12=new obj1(R.mipmap.ic_bbcs,"BBC Sports");
+        list.add(o12);
+        obj1 o13=new obj1(R.mipmap.ic_mtvnews,"MTV News");
+        list.add(o13);
+        obj1 o14=new obj1(R.mipmap.ic_econo,"The Economist");
+        list.add(o14);
+
 
         int No_of_coloumns = 3;
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), No_of_coloumns));
-        //modelList = getAllaudiofromdevice();
         ad = new adapter1(list, (ViewGroup) view);
         recyclerView.setAdapter(ad);
         return view;

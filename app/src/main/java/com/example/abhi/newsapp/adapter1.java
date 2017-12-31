@@ -60,8 +60,32 @@ public class adapter1 extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         bundle.putString("source","al-jazeera-english");}
                     if (o.txtv.equals("BBC News")){
                         bundle.putString("source","bbc-news");}
-                    if (o.txtv.equals("Daily Mail")){
+                    if (o.txtv.equals("The Verge")){
                         bundle.putString("source","the-verge");}
+                    if (o.txtv.equals("Bloomberg")){
+                        bundle.putString("source","bloomberg");}
+                    if (o.txtv.equals("Ars Technica")){
+                        bundle.putString("source","ars-technica");}
+                    if (o.txtv.equals("Mtv News")){
+                        bundle.putString("source","mtv-news");}
+                    if (o.txtv.equals("Business_Insider")){
+                        bundle.putString("source","business-insider");}
+                    if (o.txtv.equals("ESPN")){
+                        bundle.putString("source","espn");}
+                    if (o.txtv.equals("BBC Sports")){
+                        bundle.putString("source","bbc-sport");}
+                    if (o.txtv.equals("Fox Sports")){
+                        bundle.putString("source","fox-sports");}
+                    if (o.txtv.equals("ESPN Cric Info")){
+                        bundle.putString("source","espn-cric-info");}
+                    if (o.txtv.equals("Fox Sports")){
+                        bundle.putString("source","fox-sports");}
+                    if (o.txtv.equals("The Economist")){
+                        bundle.putString("source","the-economist");}
+                    if (o.txtv.equals("CNBC News")){
+                        bundle.putString("source","cnbc");}
+                    if (o.txtv.equals("MTV News (UK)")){
+                        bundle.putString("source","mtv-news-uk");}
                         f.setArguments(bundle);
                         AppCompatActivity activity=(AppCompatActivity)v.getContext();
                         FragmentManager manager= activity.getSupportFragmentManager();

@@ -86,6 +86,16 @@ public class adapter1 extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         bundle.putString("source","cnbc");}
                     if (o.txtv.equals("MTV News (UK)")){
                         bundle.putString("source","mtv-news-uk");}
+                    if (o.txtv.equals("Football Italia")){
+                        bundle.putString("source","football-italia");}
+                    if (o.txtv.equals("Hacker News")){
+                        bundle.putString("source","hacker-news");}
+                    if (o.txtv.equals("The Hindu")){
+                        bundle.putString("source","the-hindu");}
+                    if (o.txtv.equals("The Times Of India")){
+                        bundle.putString("source","the-times-of-india");}
+                    if (o.txtv.equals("Techcrunch")){
+                        bundle.putString("source","techcrunch");}
                         f.setArguments(bundle);
                         AppCompatActivity activity=(AppCompatActivity)v.getContext();
                         FragmentManager manager= activity.getSupportFragmentManager();

@@ -60,6 +60,14 @@ public class fragment_default extends Fragment {
         list.add(o13);
         obj1 o14=new obj1(R.mipmap.ic_econo,"The Economist");
         list.add(o14);
+        obj1 o15=new obj1(R.mipmap.ic_hindu,"The Hindu");
+        list.add(o15);
+        obj1 o16=new obj1(R.mipmap.ic_hacker,"Hacker News");
+        list.add(o16);
+        obj1 o17=new obj1(R.mipmap.ic_timesofindia,"Times of India");
+        list.add(o17);
+        obj1 o18=new obj1(R.mipmap.ic_tech,"Techcrunch");
+        list.add(o18);
 
 
         int No_of_coloumns = 3;

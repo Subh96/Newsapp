@@ -18,5 +18,9 @@
             android:id="@+id/dailymail"
             android:icon="@mipmap/ic_mail"
             android:title="DailyMail" />
+        <item
+            android:id="@+id/verge"
+            android:icon="@mipmap/ic_mail"
+            android:title="The Verge" />
     </group>
 </menu>

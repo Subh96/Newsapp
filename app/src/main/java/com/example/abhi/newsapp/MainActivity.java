@@ -102,6 +102,13 @@ public class MainActivity extends AppCompatActivity
             transaction.commit();
 
         }
+        else if (id == R.id.verge) {
+            Fragment f=new fragment_verge();
+            FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.news,f,"Dailymail News");
+            transaction.commit();
+
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

@@ -78,37 +78,6 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.cnn) {
-            Fragment f=new fragment_cnn();
-            FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.news,f,"CNN News");
-            transaction.commit();
-        } else if (id == R.id.bbc) {
-            Fragment f=new fragment_bbc();
-            FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.news,f,"CNN News");
-            transaction.commit();
-
-        } else if (id == R.id.alzazera) {
-            Fragment f=new fragment_aljazera();
-            FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.news,f,"Aljazera News");
-            transaction.commit();
-
-        } else if (id == R.id.dailymail) {
-            Fragment f=new fragment_daily();
-            FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.news,f,"Dailymail News");
-            transaction.commit();
-
-        }
-        else if (id == R.id.verge) {
-            Fragment f=new fragment_verge();
-            FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.news,f,"Dailymail News");
-            transaction.commit();
-
-        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

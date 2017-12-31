@@ -1,7 +1,14 @@
 package com.example.abhi.newsapp;
 
+import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,9 +27,9 @@ import java.util.List;
 public class adapter1 extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public List<obj1> l= new ArrayList();
-
+    public FragmentManager fm;
     private ViewGroup context;
-    public adapter1(List<obj1> music, ViewGroup c){
+    public adapter1(List<obj1> music, ViewGroup c ){
         this.context=c;
         this.l=music;
     }
@@ -34,15 +41,35 @@ public class adapter1 extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final adapter1.myholder1 myholder= (adapter1.myholder1) holder;
-            obj1 o=l.get(position);
+            final obj1 o=l.get(position);
             myholder.txt1.setText(o.txtv);
             myholder.img.setImageResource(o.img);
             myholder.crdv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Snackbar.make(v,myholder.txt1.getText(),Snackbar.LENGTH_SHORT).show();
+
+                        Fragment f=new fragment_bbc();
+                        Bundle bundle=new Bundle();
+                    if (o.txtv.equals("Daily Mail")){
+                        bundle.putString("source","daily-mail");}
+                    if (o.txtv.equals("CNN News")){
+                        bundle.putString("source","cnn");}
+                    if (o.txtv.equals("Al Jazeera")){
+                        bundle.putString("source","al-jazeera-english");}
+                    if (o.txtv.equals("BBC News")){
+                        bundle.putString("source","bbc-news");}
+                    if (o.txtv.equals("Daily Mail")){
+                        bundle.putString("source","the-verge");}
+                        f.setArguments(bundle);
+                        AppCompatActivity activity=(AppCompatActivity)v.getContext();
+                        FragmentManager manager= activity.getSupportFragmentManager();
+                        FragmentTransaction transaction = manager.beginTransaction();
+                        transaction.replace(R.id.news,f,"News").addToBackStack(null);
+                        transaction.commit();
+
+
                 }
             });
     }

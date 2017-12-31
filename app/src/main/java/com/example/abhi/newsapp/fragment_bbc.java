@@ -2,6 +2,7 @@ package com.example.abhi.newsapp;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -31,7 +32,8 @@ import okhttp3.Response;
 
 public class fragment_bbc extends Fragment {
 
-    private String url="https://newsapi.org/v1/articles?source=bbc-news&apiKey=5d583239048a4d9dab08936b75f89128";
+    String source;
+    protected String url="https://newsapi.org/v1/articles?source="+source+"&apiKey=5d583239048a4d9dab08936b75f89128";
 
     protected List<obj> data;
     RecyclerView recyclerView;
@@ -44,7 +46,13 @@ public class fragment_bbc extends Fragment {
 
        View view = inflater.inflate(R.layout.activity_fragment_one, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycle);
-        getjson();
+        Bundle bundle=this.getArguments();
+        if(bundle!=null){
+            source=bundle.get("source").toString();
+            url="https://newsapi.org/v1/articles?source="+source+"&apiKey=5d583239048a4d9dab08936b75f89128";
+            Snackbar.make(container,url+" "+source,Snackbar.LENGTH_SHORT).show();
+        }
+       getjson();
         return view;
     }
     public void getjson(){
@@ -130,8 +138,8 @@ public class fragment_bbc extends Fragment {
                             public void run() {
                                 try{
                                     if(progressDialog.isShowing()){
-                                        progressDialog.dismiss();
-                                    }
+                                       progressDialog.dismiss();
+                                   }
                                     madapter = new adapter2(getActivity(), data);
                                     recyclerView.setAdapter(madapter);
                                     manager = new LinearLayoutManager(getActivity());

@@ -4,9 +4,6 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -30,13 +27,13 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * Created by abhi on 22/10/17.
+ * Created by abhi on 31/12/17.
  */
 
-public class fragment_bbc extends Fragment {
+public class fragment_headlines extends Fragment {
 
-    String source;
-    protected String url="https://newsapi.org/v1/articles?source="+source+"&apiKey=5d583239048a4d9dab08936b75f89128";
+
+    protected String url="https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=5d583239048a4d9dab08936b75f89128";
 
     protected List<obj> data;
     RecyclerView recyclerView;
@@ -48,16 +45,9 @@ public class fragment_bbc extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-       View view = inflater.inflate(R.layout.activity_fragment_one, container, false);
+        View view = inflater.inflate(R.layout.activity_fragment_one, container, false);
         recyclerView = (RecyclerView) view.findViewById(R.id.recycle);
-        Bundle bundle=this.getArguments();
-        if(bundle!=null){
-            source=bundle.get("source").toString();
-            url="https://newsapi.org/v1/articles?source="+source+"&apiKey=5d583239048a4d9dab08936b75f89128";
-            Snackbar.make(container,source,Snackbar.LENGTH_SHORT).show();
-        }
         getjson();
-
         return view;
     }
 
@@ -65,7 +55,7 @@ public class fragment_bbc extends Fragment {
         data= new ArrayList<>();
         final ProgressDialog progressDialog=new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading...");
-        progressDialog.setTitle("Wait a second");
+        progressDialog.setTitle("Wait a Moment");
         progressDialog.setMax(30);
         progressDialog.setProgressStyle(progressDialog.STYLE_SPINNER);
         progressDialog.setCancelable(false);
@@ -92,7 +82,7 @@ public class fragment_bbc extends Fragment {
                         try {
                             JSONObject jobj = new JSONObject(s);
                             String status = jobj.getString("status");
-                            String source = jobj.getString("source");
+                            int tr=jobj.getInt("totalResults");
                             JSONArray jsonArray = jobj.getJSONArray("articles");
 
                             // Extract data from json and store into ArrayList as class objects
@@ -144,8 +134,8 @@ public class fragment_bbc extends Fragment {
                             public void run() {
                                 try{
                                     if(progressDialog.isShowing()){
-                                       progressDialog.dismiss();
-                                   }
+                                        progressDialog.dismiss();
+                                    }
                                     madapter = new adapter2(getActivity(), data);
                                     recyclerView.setAdapter(madapter);
                                     manager = new LinearLayoutManager(getActivity());

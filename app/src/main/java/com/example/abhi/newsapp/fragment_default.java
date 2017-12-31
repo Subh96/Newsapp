@@ -56,7 +56,7 @@ public class fragment_default extends Fragment {
         list.add(o11);
         obj1 o12=new obj1(R.mipmap.ic_bbcs,"BBC Sports");
         list.add(o12);
-        obj1 o13=new obj1(R.mipmap.ic_mtvnews,"MTV News");
+        obj1 o13=new obj1(R.mipmap.ic_mtvnews,"Mtv News");
         list.add(o13);
         obj1 o14=new obj1(R.mipmap.ic_econo,"The Economist");
         list.add(o14);
@@ -64,7 +64,7 @@ public class fragment_default extends Fragment {
         list.add(o15);
         obj1 o16=new obj1(R.mipmap.ic_hacker,"Hacker News");
         list.add(o16);
-        obj1 o17=new obj1(R.mipmap.ic_timesofindia,"Times of India");
+        obj1 o17=new obj1(R.mipmap.ic_timesofindia,"The Times of India");
         list.add(o17);
         obj1 o18=new obj1(R.mipmap.ic_tech,"Techcrunch");
         list.add(o18);

@@ -3,24 +3,8 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/cnn"
-            android:icon="@mipmap/ic_cnn"
-            android:title="CNN" />
-        <item
-            android:id="@+id/bbc"
-            android:icon="@mipmap/ic_bbc"
-            android:title="BBC" />
-        <item
-            android:id="@+id/alzazera"
-            android:icon="@mipmap/ic_alza"
-            android:title="Aljajera" />
-        <item
-            android:id="@+id/dailymail"
-            android:icon="@mipmap/ic_mail"
-            android:title="DailyMail" />
-        <item
-            android:id="@+id/verge"
-            android:icon="@mipmap/ic_mail"
-            android:title="The Verge" />
+            android:id="@+id/th"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Top Headlines" />
     </group>
 </menu>

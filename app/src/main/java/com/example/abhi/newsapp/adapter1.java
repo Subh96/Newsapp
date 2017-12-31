@@ -2,6 +2,7 @@ package com.example.abhi.newsapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -46,6 +47,7 @@ public class adapter1 extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             final obj1 o=l.get(position);
             myholder.txt1.setText(o.txtv);
             myholder.img.setImageResource(o.img);
+            myholder.txt1.setTypeface(Typeface.SERIF,Typeface.BOLD);
             myholder.crdv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -92,17 +94,19 @@ public class adapter1 extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         bundle.putString("source","hacker-news");}
                     if (o.txtv.equals("The Hindu")){
                         bundle.putString("source","the-hindu");}
-                    if (o.txtv.equals("The Times Of India")){
+                    if (o.txtv.equals("The Times of India")){
                         bundle.putString("source","the-times-of-india");}
                     if (o.txtv.equals("Techcrunch")){
                         bundle.putString("source","techcrunch");}
+                    else{
+                        bundle.putString("source","the-hindu");
+                    }
                         f.setArguments(bundle);
                         AppCompatActivity activity=(AppCompatActivity)v.getContext();
                         FragmentManager manager= activity.getSupportFragmentManager();
                         FragmentTransaction transaction = manager.beginTransaction();
                         transaction.replace(R.id.news,f,"News").addToBackStack(null);
                         transaction.commit();
-
 
                 }
             });

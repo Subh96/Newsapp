@@ -98,9 +98,6 @@ public class adapter1 extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                         bundle.putString("source","the-times-of-india");}
                     if (o.txtv.equals("Techcrunch")){
                         bundle.putString("source","techcrunch");}
-                    else{
-                        bundle.putString("source","the-hindu");
-                    }
                         f.setArguments(bundle);
                         AppCompatActivity activity=(AppCompatActivity)v.getContext();
                         FragmentManager manager= activity.getSupportFragmentManager();
